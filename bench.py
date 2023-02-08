@@ -199,7 +199,7 @@ def mp_test():
 
 if __name__ == '__main__':       
   print("python-speed v1.3 using python v%d.%d.%d" %(sys.version_info[0],sys.version_info[1],sys.version_info[2]))
-  with open("test_file") as file:
+  with open("test_file", encoding="utf-8") as file:
     
     total=0
     data = file.read()
@@ -248,7 +248,7 @@ if __name__ == '__main__':
     print('fibonnaci/stack: ',str(round(elapsed_time * 1e3, 2)), 'ms')
     
     start_time = timer()
-    with Pool(processes=64) as pool:
+    with Pool(processes=6) as pool:
         mp_test()
     elapsed_time = timer() - start_time
     total+=elapsed_time
